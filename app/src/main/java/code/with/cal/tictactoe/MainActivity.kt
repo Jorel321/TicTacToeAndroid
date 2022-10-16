@@ -55,12 +55,12 @@ class MainActivity : AppCompatActivity()
         if(checkForVictory(NOUGHT))
         {
             noughtsScore++
-            result("Noughts Win!")
+            result("Player2 Win!")
         }
         else if(checkForVictory(CROSS))
         {
             crossesScore++
-            result("Crosses Win!")
+            result("Player1 Win!")
         }
 
         if(fullBoard())
