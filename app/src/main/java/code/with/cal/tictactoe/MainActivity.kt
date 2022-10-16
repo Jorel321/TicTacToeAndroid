@@ -101,7 +101,7 @@ class MainActivity : AppCompatActivity()
 
     private fun result(title: String)
     {
-        val message = "\nNoughts $Player1Score\n\nCrosses $Player2Score"
+        val message = "\nPlayer1 $Player1Score\n\nPlayer2 $Player2Score"
         AlertDialog.Builder(this)
             .setTitle(title)
             .setMessage(message)
