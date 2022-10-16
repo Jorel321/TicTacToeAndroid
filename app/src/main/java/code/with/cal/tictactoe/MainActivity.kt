@@ -18,8 +18,8 @@ class MainActivity : AppCompatActivity()
     private var firstTurn = Turn.Player2
     private var currentTurn = Turn.Player2
 
-    private var crossesScore = 0
-    private var noughtsScore = 0
+    private var Player2Score = 0
+    private var Player1Score = 0
 
     private var boardList = mutableListOf<Button>()
 
@@ -54,12 +54,12 @@ class MainActivity : AppCompatActivity()
 
         if(checkForVictory(NOUGHT))
         {
-            noughtsScore++
+            Player1Score++
             result("Player2 Win!")
         }
         else if(checkForVictory(CROSS))
         {
-            crossesScore++
+            Player2Score++
             result("Player1 Win!")
         }
 
@@ -101,7 +101,7 @@ class MainActivity : AppCompatActivity()
 
     private fun result(title: String)
     {
-        val message = "\nNoughts $noughtsScore\n\nCrosses $crossesScore"
+        val message = "\nNoughts $Player1Score\n\nCrosses $Player2Score"
         AlertDialog.Builder(this)
             .setTitle(title)
             .setMessage(message)
