@@ -11,12 +11,12 @@ class MainActivity : AppCompatActivity()
 {
     enum class Turn
     {
-        NOUGHT,
-        CROSS
+        Player1,
+        Player2
     }
 
-    private var firstTurn = Turn.CROSS
-    private var currentTurn = Turn.CROSS
+    private var firstTurn = Turn.Player2
+    private var currentTurn = Turn.Player2
 
     private var crossesScore = 0
     private var noughtsScore = 0
@@ -120,10 +120,10 @@ class MainActivity : AppCompatActivity()
             button.text = ""
         }
 
-        if(firstTurn == Turn.NOUGHT)
-            firstTurn = Turn.CROSS
-        else if(firstTurn == Turn.CROSS)
-            firstTurn = Turn.NOUGHT
+        if(firstTurn == Turn.Player1)
+            firstTurn = Turn.Player2
+        else if(firstTurn == Turn.Player2)
+            firstTurn = Turn.Player1
 
         currentTurn = firstTurn
         setTurnLabel()
@@ -144,15 +144,15 @@ class MainActivity : AppCompatActivity()
         if(button.text != "")
             return
 
-        if(currentTurn == Turn.NOUGHT)
+        if(currentTurn == Turn.Player1)
         {
             button.text = NOUGHT
-            currentTurn = Turn.CROSS
+            currentTurn = Turn.Player2
         }
-        else if(currentTurn == Turn.CROSS)
+        else if(currentTurn == Turn.Player2)
         {
             button.text = CROSS
-            currentTurn = Turn.NOUGHT
+            currentTurn = Turn.Player1
         }
         setTurnLabel()
     }
@@ -160,9 +160,9 @@ class MainActivity : AppCompatActivity()
     private fun setTurnLabel()
     {
         var turnText = ""
-        if(currentTurn == Turn.CROSS)
+        if(currentTurn == Turn.Player2)
             turnText = "Turn $CROSS"
-        else if(currentTurn == Turn.NOUGHT)
+        else if(currentTurn == Turn.Player1)
             turnText = "Turn $NOUGHT"
 
         binding.turnTV.text = turnText
