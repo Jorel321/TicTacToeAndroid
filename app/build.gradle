@@ -4,12 +4,12 @@ plugins {
 }
 
 android {
-    compileSdk 31
+    compileSdk 33
 
     defaultConfig {
         applicationId "code.with.cal.tictactoe"
         minSdk 26
-        targetSdk 30
+        targetSdk 32
         versionCode 1
         versionName "1.0"
 
